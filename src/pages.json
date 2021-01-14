@@ -3,7 +3,10 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "探索小镇",
+				"onReachBottomDistance": 50,
+				"navigationStyle": "custom"
 			}
 		}
 	],

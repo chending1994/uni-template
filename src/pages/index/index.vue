@@ -1,49 +1,50 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
+		<view class="padding flex flex-direction">
+			<button class="cu-btn bg-grey lg">玄灰</button>
+			<button class="cu-btn bg-red margin-tb-sm lg">嫣红</button>
+		</view>
+
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+import { workList } from "@/api/index";
 
-		},
-		methods: {
-
-		}
-	}
+export default {
+  data() {
+    return {
+      title: "Hello",
+    };
+  },
+  onLoad() {},
+  onShow() {
+    this.initData();
+  },
+  methods: {
+    initData() {
+      this.getIndexList();
+    },
+    async getIndexList() {
+      const data = await this.$http.get(`${workList}`);
+      console.log(data);
+    },
+  },
+};
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style lang="scss">
+page {
+	background: $color-white;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: center;
+}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>

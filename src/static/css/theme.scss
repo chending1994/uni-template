@@ -9,7 +9,7 @@ $color-black: #000;
 $page-row-spacing: 30upx;
 $page-color-base: #f8f8f8;
 $page-color-light: #f8f6fc;
-$base-color: #fa436a;
+$base-color: #f60;
 
 /* 文字尺寸 */
 $font-sm: 24upx;
@@ -36,3 +36,7 @@ $uni-color-primary:#fa436a;
 $uni-color-success: #4cd964;
 $uni-color-warning: #f0ad4e;
 $uni-color-error: #dd524d;
+
+:export {
+  baseColor: $base-color;
+}
