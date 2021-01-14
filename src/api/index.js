@@ -1,4 +1,4 @@
-// 查询绑定状态
+// 首页列表
 const workList = 'vote-teach/vote/work';
 
 export {

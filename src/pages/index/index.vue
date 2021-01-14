@@ -1,26 +1,25 @@
 <template>
 	<view class="content">
-		<view>
-			<text class="title">{{title}}</text>
+		<view class="text-center">
+			<text class="title text-sl text-bold">{{title}}</text>
 		</view>
-		<view class="padding flex flex-direction">
-			<button class="cu-btn bg-grey lg">玄灰</button>
-			<button class="cu-btn bg-red margin-tb-sm lg">嫣红</button>
-		</view>
-
 	</view>
 </template>
 
 <script>
-import { workList } from "@/api/index";
+import { indexList } from '@/api/product';
 
 export default {
   data() {
     return {
       title: "Hello",
+      loading: true,
+      appName: this.$mSettingConfig.appName,
     };
   },
-  onLoad() {},
+  onLoad() {
+    
+  },
   onShow() {
     this.initData();
   },
@@ -28,23 +27,43 @@ export default {
     initData() {
       this.getIndexList();
     },
-    async getIndexList() {
-      const data = await this.$http.get(`${workList}`);
-      console.log(data);
-    },
+    async getIndexList(type) {
+      await this.$http
+        .get(`${indexList}`, {})
+        .then(async r => {
+          uni.setNavigationBarTitle({ title: this.appName });
+          if (type === 'refresh') {
+            uni.stopPullDownRefresh();
+          }
+          // 首页参数赋值
+          console.log(r.data);
+          this.loading = false;
+        })
+        .catch(() => {
+          this.loading = false;
+          if (type === 'refresh') {
+            uni.stopPullDownRefresh();
+          }
+        })
+
+    }
   },
 };
 </script>
 
 <style lang="scss">
 page {
-	background: $color-white;
+  background: $color-white;
+  height: 100%;
 }
 .content {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: center;
+  .title {
+    font-family: YouSheBiaoTiHei;
+  }
 }
 
 </style>

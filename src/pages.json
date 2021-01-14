@@ -4,9 +4,16 @@
 			"path": "pages/index/index",
 			"style": {
 				"enablePullDownRefresh": true,
-				"navigationBarTitleText": "探索小镇",
-				"onReachBottomDistance": 50,
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "首页",
+				"onReachBottomDistance": 50
+			}
+		},
+		{
+			"path": "pages/about/index",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "关于",
+				"onReachBottomDistance": 50
 			}
 		}
 	],
@@ -15,5 +22,25 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "white",
+		"color": "#999999",
+		"selectedColor": "#007AFF",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/img/tabbar/component.png",
+				"selectedIconPath": "static/img/tabbar/componentHL.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/about/index",
+				"iconPath": "static/img/tabbar/template.png",
+				"selectedIconPath": "static/img/tabbar/templateHL.png",
+				"text": "关于"
+			}
+		]
 	}
 }
