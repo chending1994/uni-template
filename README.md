@@ -1,4 +1,4 @@
-# uni-defalult
+# uni-app模板
 
 ## Project setup
 ```
