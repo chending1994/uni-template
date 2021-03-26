@@ -1,11 +1,11 @@
 /* eslint-disable */
 // #ifdef H5
-import { wechatConfig } from '@/api/basic';
+// import { wechatConfig } from '@/api/basic';
 import $mConfig from '@/config/index.config';
 import jweixin from '@/common/jweixin';
 // #endif
 import { isBindingCheck } from '@/api/login';
-import { payCreate } from '@/api/basic';
+// import { payCreate } from '@/api/basic';
 import { http } from '@/utils/request';
 import mHelper from '@/utils/helper';
 import mRouter from '@/utils/router';
